@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
     # load data for evaluation
     raw_datasets, tokenized_datasets = prepare_training('data/processed/cleaned_tweets.csv', tokenizer)
-    print(tokenized_datasets['test'])
-    accuracy, preds = evaluate(model, tokenized_datasets['test'], batch_size=config['batch_size'])
+
+    accuracy, preds = evaluate(model, tokenized_datasets['test'], category_mapping=category_mapping, batch_size=config['batch_size'])
     print(f"Accuracy: {accuracy}")
 
     # save the predictions

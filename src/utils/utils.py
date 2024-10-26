@@ -81,6 +81,7 @@ def train_and_log(config = None):
         scheduler = get_linear_schedule_with_warmup(optimizer,
                                                     num_warmup_steps=0,
                                                     num_training_steps=total_steps)
+        wandb.watch(model, log="all")
         eval_losses = []
         for epoch in range(config.epochs):
             train_loss, eval_loss = train_epoch(model, tokenized_datasets['train'], tokenized_datasets['val'], loss_fn, optimizer, scheduler, batch_size=config.batch_size)
@@ -151,31 +152,40 @@ def save_model(model, path):
     torch.save(model.state_dict(), path)
 
 @torch.no_grad()
-def evaluate(model, data, batch_size=32):
-    model.eval()
-    batches = []
-    for i in range(0, len(data), batch_size):
-        if i + batch_size < len(data):
-            batches.append(data[i:i+batch_size])
-        else:
-            batches.append(data[i:])
-    all_preds = []
-    for batch in tqdm(batches, desc="Test", unit="batch"):
-            input_ids = torch.tensor(batch['input_ids']).to('cuda')
-            input_ids = input_ids.view(len(batch['input_ids']), -1)
-            attention_mask = torch.tensor(batch['attention_mask']).to('cuda')
-            attention_mask = attention_mask.view(len(batch['input_ids']), -1)
-            targets = torch.tensor(batch['sentiment']).to('cuda')
-            # print(len(targets))
-            probs = model(input_ids, attention_mask = attention_mask)
-            # extract prediction
-            preds = torch.argmax(probs, dim=1)
-            all_preds.extend(preds.cpu().numpy())
-    # calculate accuracy
-    correct = 0
-    for i in range(len(all_preds)):
-        if all_preds[i] == data[i]['sentiment']:
-            correct += 1
+def evaluate(model, data, category_mapping, batch_size=32):
+    with wandb.init(project='bert-ticket-classifier', job_type='testing'):
+        model.eval()
+        batches = []
+        for i in range(0, len(data), batch_size):
+            if i + batch_size < len(data):
+                batches.append(data[i:i+batch_size])
+            else:
+                batches.append(data[i:])
+        all_preds = []
+        for batch in tqdm(batches, desc="Test", unit="batch"):
+                input_ids = torch.tensor(batch['input_ids']).to('cuda')
+                input_ids = input_ids.view(len(batch['input_ids']), -1)
+                attention_mask = torch.tensor(batch['attention_mask']).to('cuda')
+                attention_mask = attention_mask.view(len(batch['input_ids']), -1)
+                targets = torch.tensor(batch['sentiment']).to('cuda')
+                # print(len(targets))
+                probs = model(input_ids, attention_mask = attention_mask)
+                # extract prediction
+                preds = torch.argmax(probs, dim=1)
+                all_preds.extend(preds.cpu().numpy())
+        # calculate accuracy
+        correct = 0
+        for i in range(len(all_preds)):
+            if all_preds[i] == data[i]['sentiment']:
+                correct += 1
+        wandb.log({
+            "accuracy": correct / len(all_preds)
+        })
+        inverse_mapping = {v: k for k, v in category_mapping.items()}
+        y_true = [data[i]['sentiment'] for i in range(len(data))]
+        wandb.log({"confusion_matrix": wandb.plot.confusion_matrix(probs=None, y_true=y_true, preds=all_preds, class_names=["Positive", "Negative"])})
+        wandb.log({"examples": wandb.Table(data=[[inverse_mapping[pred], inverse_mapping[truth]] for pred, truth in zip(all_preds, y_true)], columns=["Prediction", "Ground Truth"])})
+        wandb.finish()
     return correct / len(all_preds), all_preds
 
 def save_predictions(preds, targets, mapping, path):

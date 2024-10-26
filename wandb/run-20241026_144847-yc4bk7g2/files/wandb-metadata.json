@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.5",
+    "heartbeatAt": "2024-10-26T12:48:50.106316",
+    "startedAt": "2024-10-26T12:48:47.849767",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\bais_\\source\\repos\\Progetto\\NLP-customer-classification\\src\\scripts\\eval.py",
+    "codePathLocal": "src\\scripts\\eval.py",
+    "codePath": "src\\scripts\\eval.py",
+    "git": {
+        "remote": "https://github.com/giacomobais/NLP-customer-classification.git",
+        "commit": "bea45d7a3741681dec1477b5257d8a55420acfa9"
+    },
+    "email": "57444236+giacomobais@users.noreply.github.com",
+    "root": "C:/Users/bais_/source/repos/Progetto/NLP-customer-classification",
+    "host": "DESKTOP-3I1KQF4",
+    "username": "bais_",
+    "executable": "C:\\Users\\bais_\\anaconda3\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2592.0,
+        "min": 0.0,
+        "max": 2592.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2592.0,
+            "min": 0.0,
+            "max": 2592.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 464.33886337280273,
+            "used": 430.61987686157227
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 950M",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 7.901309967041016
+    }
+}
