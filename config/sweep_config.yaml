@@ -1,0 +1,17 @@
+method: 'random'
+metric:
+  name: 'loss'
+  goal: 'minimize'
+parameters:
+  batch_size:
+    values: [2,4,8]
+  weight_decay:
+    values: [0.01, 0.001, 0.0001]
+  lr:
+    values: [0.0001]
+  epochs:
+    values: [1]
+  n_samples:
+    values: [8000]
+  model_name: 
+    values: ["bert-base-uncased"]

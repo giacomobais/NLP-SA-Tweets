@@ -1,0 +1,75 @@
+C:\Users\bais_\anaconda3\Lib\site-packages\transformers\tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Standard training...
+Training:   0%|                                                                                                                  | 0/799 [00:00<?, ?batch/s]C:\Users\bais_\anaconda3\Lib\site-packages\transformers\models\bert\modeling_bert.py:440: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Training:   7%|███████▊                                                                                                 | 59/799 [02:03<25:52,  2.10s/batch]
+Traceback (most recent call last):
+  File "C:\Users\bais_\source\repos\Progetto\NLP-customer-classification\src\scripts\train.py", line 37, in <module>
+    model, train_losses, eval_losses = train(model, tokenized_datasets['train'], tokenized_datasets['val'], loss_fn, config=config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bais_\source\repos\Progetto\NLP-customer-classification\src\utils\utils.py", line 74, in train
+    train_loss, eval_loss = train_epoch(model, train_data, eval_data, loss_fn, optimizer, scheduler, batch_size=config['batch_size'])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bais_\source\repos\Progetto\NLP-customer-classification\src\utils\utils.py", line 38, in train_epoch
+    total_loss += loss.item()
+                  ^^^^^^^^^^^
+KeyboardInterrupt

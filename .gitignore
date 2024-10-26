@@ -1,0 +1,4 @@
+
+data/raw/sentiment_tweets.csv
+data/processed/cleaned_tweets.csv
+models/bert_ticket_classifier.pt

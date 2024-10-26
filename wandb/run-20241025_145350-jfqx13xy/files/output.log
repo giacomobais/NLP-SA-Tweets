@@ -1,0 +1,18 @@
+C:\Users\bais_\anaconda3\Lib\site-packages\transformers\tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Traceback (most recent call last):
+  File "C:\Users\bais_\anaconda3\Lib\site-packages\wandb\sdk\wandb_config.py", line 162, in __getattr__
+    return self.__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bais_\anaconda3\Lib\site-packages\wandb\sdk\wandb_config.py", line 130, in __getitem__
+    return self._items[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'weight_decay'
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "C:\Users\bais_\source\repos\Progetto\NLP-customer-classification\src\utils\utils.py", line 79, in train_and_log
+    optimizer = torch.optim.AdamW(model.parameters(), lr=config.lr, weight_decay=config.weight_decay)
+                                                                                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bais_\anaconda3\Lib\site-packages\wandb\sdk\wandb_config.py", line 164, in __getattr__
+    raise AttributeError(
+AttributeError: <class 'wandb.sdk.wandb_config.Config'> object has no attribute 'weight_decay'

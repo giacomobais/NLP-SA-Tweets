@@ -1,0 +1,56 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.5
+    cli_version: 0.16.4
+    framework: huggingface
+    huggingface_version: 4.45.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1729856197.0
+    t:
+      1:
+      - 1
+      - 11
+      - 49
+      - 51
+      - 55
+      - 71
+      2:
+      - 1
+      - 11
+      - 49
+      - 51
+      - 55
+      - 71
+      3:
+      - 2
+      - 23
+      - 37
+      4: 3.11.5
+      5: 0.16.4
+      6: 4.45.0
+      8:
+      - 3
+      - 5
+      13: windows-amd64
+batch_size:
+  desc: null
+  value: 32
+epochs:
+  desc: null
+  value: 1
+lr:
+  desc: null
+  value: 0.0001
+model_name:
+  desc: null
+  value: bert-base-uncased
+n_samples:
+  desc: null
+  value: 8000
+weight_decay:
+  desc: null
+  value: 0.01

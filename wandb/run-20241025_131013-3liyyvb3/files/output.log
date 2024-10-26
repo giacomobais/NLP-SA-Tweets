@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\Users\bais_\anaconda3\Lib\site-packages\wandb\sdk\wandb_config.py", line 162, in __getattr__
+    return self.__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bais_\anaconda3\Lib\site-packages\wandb\sdk\wandb_config.py", line 130, in __getitem__
+    return self._items[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'model_name'
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "C:\Users\bais_\source\repos\Progetto\NLP-customer-classification\src\utils\utils.py", line 69, in train_and_log
+    model, tokenizer = load_BERT_encoder(config.model_name)
+                                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\bais_\anaconda3\Lib\site-packages\wandb\sdk\wandb_config.py", line 164, in __getattr__
+    raise AttributeError(
