@@ -12,6 +12,6 @@ parameters:
   epochs:
     values: [1]
   n_samples:
-    values: [8000]
+    values: [10000]
   model_name: 
     values: ["bert-base-uncased"]

@@ -184,7 +184,7 @@ def evaluate(model, data, category_mapping, batch_size=32):
         inverse_mapping = {v: k for k, v in category_mapping.items()}
         y_true = [data[i]['sentiment'] for i in range(len(data))]
         wandb.log({"confusion_matrix": wandb.plot.confusion_matrix(probs=None, y_true=y_true, preds=all_preds, class_names=["Positive", "Negative"])})
-        wandb.log({"examples": wandb.Table(data=[[inverse_mapping[pred], inverse_mapping[truth]] for pred, truth in zip(all_preds, y_true)], columns=["Prediction", "Ground Truth"])})
+        wandb.log({"examples": wandb.Table(data=[[category_mapping[str(pred)], category_mapping[str(truth)]] for pred, truth in zip(all_preds, y_true)], columns=["Prediction", "Ground Truth"])})
         wandb.finish()
     return correct / len(all_preds), all_preds
 

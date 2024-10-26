@@ -39,7 +39,7 @@ def clean_text(text):
 
 
 def extract_sentiment(df, n_samples = None):
-    mapping = {'Positive': 0, 'Negative': 1}
+    mapping = {'Negative': 0, 'Positive': 1}
     return mapping, df['sentiment'][:n_samples]
 
 def shuffle_data(df, seed = 42):
