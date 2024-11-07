@@ -1,10 +1,10 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from models.model import BERTTicketClassifier
+from src.models.model import BERTTicketClassifier
 from transformers import BertTokenizer
-from utils.utils import evaluate, load_category_mapping, prepare_training, save_predictions
+from src.utils.utils import evaluate, load_category_mapping, prepare_training, save_predictions
 import torch
 import yaml
 

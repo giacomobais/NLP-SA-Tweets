@@ -1,0 +1,9 @@
+data/outputs/
+data/raw/
+data/processed/cleaned_tweets.csv
+
+notebooks/
+
+project-breakdown/
+
+wandb/

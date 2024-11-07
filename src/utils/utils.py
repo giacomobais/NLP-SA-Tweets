@@ -3,7 +3,7 @@ from tqdm import tqdm
 import json
 from transformers import BertModel, BertTokenizer, get_linear_schedule_with_warmup
 from datasets import load_dataset
-from models.model import BERTTicketClassifier
+from src.models.model import BERTTicketClassifier
 import wandb
 import yaml
 

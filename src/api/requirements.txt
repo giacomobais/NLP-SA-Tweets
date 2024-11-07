@@ -1,0 +1,9 @@
+# FastAPI and Uvicorn for the API server
+fastapi==0.88.0
+uvicorn==0.23.2
+
+# Pydantic for data validation, though it is also integrated into FastAPI
+pydantic==1.10.7
+
+# YAML parsing, if you use YAML for configuration
+PyYAML==6.0.1
