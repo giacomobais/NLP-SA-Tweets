@@ -1,6 +1,10 @@
-# 1. Start with a base image
-FROM huggingface/transformers-pytorch-gpu:latest
+FROM python:3.11-slim
 
+# Install system dependencies for PyTorch and Hugging Face
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libatlas-base-dev \
+    && rm -rf /var/lib/apt/lists/*
 # 2. Set the working directory inside the container
 WORKDIR /app
 
@@ -8,7 +12,7 @@ WORKDIR /app
 COPY src/api/requirements.txt . 
 
 # 4. Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # 5. Copy everything from the project root into /app in the container
 COPY . .

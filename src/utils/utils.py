@@ -102,9 +102,9 @@ def load_category_mapping(mapping_path):
         category_mapping = json.load(f)
     return category_mapping
 
-def load_BERT_encoder(model_name):
+def load_BERT_encoder(model_name, device = 'cuda'):
     model = BertModel.from_pretrained(model_name)
-    model = model.to('cuda')
+    model = model.to(device)
     tokenizer = BertTokenizer.from_pretrained(model_name)
     return model, tokenizer
 
