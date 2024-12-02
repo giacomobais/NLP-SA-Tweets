@@ -1,4 +1,8 @@
 # NLP-customer-classification
  
-Simple project that implements a full ML pipeline, from model training to deployment using FastAPI.
-The projects includes usage of Wandb for model tracking and hyperparameter tuning, is containerized using Docker and makes use of some CI tools like Github Actions
+Simple project that implements a full ML pipeline.
+The projects includes usage of Wandb for model tracking and hyperparameter tuning. The trained model is deployed through FastAPI and is containerized using Docker. 
+
+# Training
+
+To train the model, run the train.py script, passing a boolean argument that determines whether to perform hyperparameter tuning through WandB. Hyperparameters for the sweep are contained in the sweep_config.yaml file.
