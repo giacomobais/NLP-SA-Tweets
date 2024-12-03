@@ -1,7 +1,7 @@
-# NLP-customer-classification (WIP)
+# NLP-SentimentAnalysis-Tweets (WIP)
  
-Simple project that implements a full ML pipeline. This project is a work in progress.
-The projects includes usage of Wandb for model tracking and hyperparameter tuning. The trained model is deployed through FastAPI and is containerized using Docker. 
+Simple project that implements a full ML pipeline. The aim of the project is to train an encoder block (i.e. BERT) sentiment analyzer on a tweets dataset. Then, deploy the model using FastAPI. In the project are included different tools used in MLOps, like model tracking using WandB, containeraization using Docker and CI using Github Actions.
+This project is a work in progress.
 
 # Training
 
