@@ -1,8 +1,0 @@
-2024-11-20 16:44:59,212 INFO    StreamThr :52564 [internal.py:wandb_internal():86] W&B internal server running at pid: 52564, started at: 2024-11-20 16:44:59.210394
-2024-11-20 16:44:59,215 DEBUG   HandlerThread:52564 [handler.py:handle_request():146] handle_request: status
-2024-11-20 16:44:59,231 INFO    WriterThread:52564 [datastore.py:open_for_write():87] open: C:\Users\bais_\source\repos\Progetto\NLP-customer-classification\wandb\run-20241120_164459-6svt5fux\run-6svt5fux.wandb
-2024-11-20 16:44:59,232 DEBUG   SenderThread:52564 [sender.py:send():378] send: header
-2024-11-20 16:44:59,335 DEBUG   SenderThread:52564 [sender.py:send():378] send: run
-2024-11-20 16:45:00,602 INFO    SenderThread:52564 [dir_watcher.py:__init__():211] watching files in: C:\Users\bais_\source\repos\Progetto\NLP-customer-classification\wandb\run-20241120_164459-6svt5fux\files
-2024-11-20 16:45:00,602 INFO    SenderThread:52564 [sender.py:_start_run_threads():1099] run started: 6svt5fux with start time 1732117499.219359
-2024-11-20 16:45:03,327 INFO    MainThread:52564 [internal.py:handle_exit():76] Internal process exited

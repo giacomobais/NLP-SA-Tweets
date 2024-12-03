@@ -1,7 +1,0 @@
-Test:   0%|                                                                                                                      | 0/125 [00:00<?, ?batch/s]C:\Users\bais_\anaconda3\Lib\site-packages\transformers\models\bert\modeling_bert.py:440: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
-  attn_output = torch.nn.functional.scaled_dot_product_attention(
-
-
-
-
-Test:   9%|█████████▌                                                                                                   | 11/125 [00:08<01:15,  1.52batch/s]
